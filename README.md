@@ -3,9 +3,11 @@
 <b>Name: Fernando Valentino Sitinjak</b> <br>
 <b>Student ID: 220608133</b> <br>
 
-1. **Stateless widget** adalah widget yang tidak berubah baik tampilan ataupun propertinya saat aplikasi sedang dijalankan. Widget ini tidak akan bisa dibuat kembali atau diubah ketika aplikasi yang kita gunakan sedang bekerja. Singkatnya, stateless widget adalah widget untuk tampilan statis
 
-   **Stateful widget** adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
+<summary>
+1. <b>Stateless widget</b> adalah widget yang tidak berubah baik tampilan ataupun propertinya saat aplikasi sedang dijalankan. Widget ini tidak akan bisa dibuat kembali atau diubah ketika aplikasi yang kita gunakan sedang bekerja. Singkatnya, stateless widget adalah widget untuk tampilan statis
+
+   <b>Stateful widget</b> adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
 
 2. Widget yang digunakan
    <ul>
@@ -17,7 +19,15 @@
    <li><b>SnackBar</b>: Widget yang berguna untuk menampilkan pesan ketika item diklik</li>
    <li><b>Padding</b>: Widget yang digunakan untuk menambahkan jarak (padding) di sekitar kontennya</li>
    <li><b>Column</b>: Widget layout yang digunakan untuk menampilkan child widgets secara vertikal</li>
-   <p>Dan masih banyak lagi...</p>
    </ul>
+   <p>Dan masih banyak lagi...</p>
 
-
+3. <b>IMPLEMENTASI CHECKLIST</b>
+   <ol>
+   <li>Membuat program flutter baru dengan nama <b>growtopia_shop</b>
+   ```
+   flutter create growtopia_shop
+   ```
+   </li>
+   </ol>
+</summary>
