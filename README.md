@@ -59,7 +59,11 @@
                     ..hideCurrentSnackBar()
                     ..showSnackBar(SnackBar(
                         content: Text("Kamu telah menekan tombol ${item.name}!")));
-                },
+                    }
+                )
+            )
+       }
+
    ```
    </ol>
 </details>
