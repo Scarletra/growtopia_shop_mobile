@@ -3,8 +3,8 @@
 <b>Name: Fernando Valentino Sitinjak</b> <br>
 <b>Student ID: 220608133</b> <br>
 
-
-<summary>
+<details>
+<summary>Tugas 7</summary>
 1. <b>Stateless widget</b> adalah widget yang tidak berubah baik tampilan ataupun propertinya saat aplikasi sedang dijalankan. Widget ini tidak akan bisa dibuat kembali atau diubah ketika aplikasi yang kita gunakan sedang bekerja. Singkatnya, stateless widget adalah widget untuk tampilan statis
 
    <b>Stateful widget</b> adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
@@ -25,7 +25,7 @@
 3. <b>IMPLEMENTASI CHECKLIST</b>
    <ol>
    <li>Membuat program flutter baru dengan nama <b>growtopia_shop</b>
-   ```
+   ```shell
    flutter create growtopia_shop
    ```
    </li>
@@ -39,11 +39,9 @@
    </li>
    <li>Membuat widget <b>ShopItem</b> pada <b>MyHomePage</b><br>
    ```dart
-   ...
    ShopItem("Lihat Item", Icons.checklist, const Color.fromARGB(233, 230, 166, 198)),
    ShopItem("Tambah Item", Icons.add_shopping_cart, const Color.fromARGB(233, 215, 210, 213)),
    ShopItem("Logout", Icons.logout, const Color.fromARGB(233, 54, 10, 32)),
-   ...
    ```
    </li>
    <li>Pada class <b>ShopCard</b> menambahkan potongan kode</li><br>
@@ -68,4 +66,4 @@
                 },
    ```
    </ol>
-</summary>
+</details>
