@@ -24,11 +24,7 @@
 
 3. <b>IMPLEMENTASI CHECKLIST</b>
    <ol>
-   <li>Membuat program flutter baru dengan nama <b>growtopia_shop</b>
-   ```
-   flutter create growtopia_shop
-   ```
-   </li>
+   <li>Membuat program flutter baru dengan nama <b>growtopia_shop</b></li>
    <li>Melakukan beberapa import pada file <b>main.dart</b><br>
    ```
    import 'package:flutter/material.dart'; 
@@ -36,17 +32,9 @@
    import 'package:growtopia_shop/menu.dart';
    // menu.dart merupakan package yang berisikan tampilan yang ingin ditampilkan pada aplikasi
    ```
-   ```
-    // Langsung menampilkan sesuatu
-    print('Hello, World!');
-
-    // Mendeklarasikan value terlebuh dahulu sebelum ditampikan
-    String halo = 'Halo, Dunia!';
-    print(halo);
-    ```
    </li>
    <li>Membuat widget <b>ShopItem</b> pada <b>MyHomePage</b><br>
-   ```
+   
    ShopItem("Lihat Item", Icons.checklist, const Color.fromARGB(233, 230, 166, 198)),
    ShopItem("Tambah Item", Icons.add_shopping_cart, const Color.fromARGB(233, 215, 210, 213)),
    ShopItem("Logout", Icons.logout, const Color.fromARGB(233, 54, 10, 32)),
