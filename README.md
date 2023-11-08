@@ -26,22 +26,22 @@
    <ol>
    <li>Membuat program flutter baru dengan nama <b>growtopia_shop</b></li>
    <li>Melakukan beberapa import pada file <b>main.dart</b><br>
-   ```dart
+  
         import 'package:flutter/material.dart'; 
         // material.dart merupakan package yang berisikan widget-widget yang dapat digunakan
         import 'package:growtopia_shop/menu.dart';
         // menu.dart merupakan package yang berisikan tampilan yang ingin ditampilkan pada aplikasi
-   ```
+   
    </li>
    <li>Membuat widget <b>ShopItem</b> pada <b>MyHomePage</b><br>
-   ```dart
+
         ShopItem("Lihat Item", Icons.checklist, const Color.fromARGB(233, 230, 166, 198)),
         ShopItem("Tambah Item", Icons.add_shopping_cart, const Color.fromARGB(233, 215, 210, 213)),
         ShopItem("Logout", Icons.logout, const Color.fromARGB(233, 54, 10, 32)),
-   ```
+
    </li>
    <li>Pada class <b>ShopCard</b> menambahkan potongan kode</li><br>
-   ```dart
+
     class ShopCard extends StatelessWidget {
        final ShopItem item;
 
@@ -64,6 +64,5 @@
             )
        }
 
-   ```
    </ol>
 </details>
