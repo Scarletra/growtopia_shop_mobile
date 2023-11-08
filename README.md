@@ -9,7 +9,7 @@
 
    <b>Stateful widget</b> adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
 
-2. Widget yang digunakan
+2. <b>Widget yang digunakan</b>
    <ul>
    <li><b>MyHomePage</b>: Widget utama yang berguna untuk menampilkan semua item</li>
    <li><b>Appbar</b>: Widget yang menampilkan bar pada bagian atas aplikasi</li>
@@ -36,6 +36,14 @@
    import 'package:growtopia_shop/menu.dart';
    // menu.dart merupakan package yang berisikan tampilan yang ingin ditampilkan pada aplikasi
    ```
+   ```dart
+    // Langsung menampilkan sesuatu
+    print('Hello, World!');
+
+    // Mendeklarasikan value terlebuh dahulu sebelum ditampikan
+    String halo = 'Halo, Dunia!';
+    print(halo);
+    ```
    </li>
    <li>Membuat widget <b>ShopItem</b> pada <b>MyHomePage</b><br>
    ```dart
