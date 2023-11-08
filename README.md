@@ -19,8 +19,12 @@
    <li><b>SnackBar</b>: Widget yang berguna untuk menampilkan pesan ketika item diklik</li>
    <li><b>Padding</b>: Widget yang digunakan untuk menambahkan jarak (padding) di sekitar kontennya</li>
    <li><b>Column</b>: Widget layout yang digunakan untuk menampilkan child widgets secara vertikal</li>
+   <li><b>Container</b>: Widget yang berguna untuk mengatur posisi, ukuran, dan lainnya dari widget lain</li>
+   <li><b>Center</b>: Widget yang berguna untuk mengatur posisi child ke tengah</li>
+   <li><b>Text</b>: Widget yang berguna untuk membuat text</li>
+   <li><b>GridView</b>: Widget yang berguna untuk menampilkan child dalam bentuk grid</li>
+   <li><b>SingleChildScrollView</b>: Widget yang berguna untuk menampilkan child dalam bentuk yang scrollable</li>
    </ul>
-   <p>Dan masih banyak lagi...</p>
 
 3. <b>IMPLEMENTASI CHECKLIST</b>
    <ol>
