@@ -7,7 +7,7 @@
 <summary>Tugas 7</summary>
 1. <b>Stateless widget</b> adalah widget yang tidak berubah baik tampilan ataupun propertinya saat aplikasi sedang dijalankan. Widget ini tidak akan bisa dibuat kembali atau diubah ketika aplikasi yang kita gunakan sedang bekerja. Singkatnya, stateless widget adalah widget untuk tampilan statis
 
-   <b>Stateful widget</b> adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
+<b>Stateful widget</b> adalah widget yang dapat berubah seiring program dijalankan. Widget ini bersifat dinamis, sehingga dapat berubah-berubah baik tampilan, maupun propertinya. Widget ini dapat berubah-ubah dengan adanya sebuah interaksi atau respons terhadap suatu event yang terpicu ketika menerima action dari user ataupun menerima data.
 
 2. <b>Widget yang digunakan</b>
    <ul>
@@ -69,4 +69,41 @@
        }
 
    </ol>
+</details>
+
+
+<details>
+<summary>Tugas 8</summary>
+<ol>
+<li>Secara definisi, 'Navigator.push()' merupakan method yang berguna untuk menambahkan halaman baru ke dalam tumpukan (stack) halaman yang akan ditampilkan. Sedangkan, 'Navigator.pushReplacement()' merupakan method yang berguna untuk menggantikan halaman yang ada pada tumpukan (stack) sekarang dengan halaman yang baru.</li>
+
+<li>
+<ul>
+<li><b>Container</b>, layout widget yang berguna untuk mengelompokkan beberapa widget ke dalam satu kotak. Pengunaannya: mengatur margin, padding, dan atribut lainnya pada widget lain</li>
+<li><b>Row dan Column</b>, layout widget yang berguna untuk mengatur penyususan widget dalam bentuk baris ataupun kolom. Penggunaannya: mengatur penyusunan teks, gambar, ataupun widget lainnya</li>
+<li><b>GridView</b>, [Deskripsi]</li>
+<li><b>Card</b>, [Deskripsi]</li>
+</ul>
+</li>
+<li>Input form yang digunakan pada tugas saya adalah 'TextFormField' yang mana berguna untuk menerima input berupa teks. Alasan menggunakan input form ini adalah karena memang yang dibutuhkan hanyalah jenis input form ini. Untuk input form lainnya, masih belum dibutuhkan karena informasi pada data yang akan dibuat masihlah sangat sederhana</li>
+<li>Penerapan clean architecture pada Flutter, menerapkan konsep pemisahan antar lapisan. Lapisan itu sendiri terbagi menjadi 3 layers, yaitu Presentation, Business, dan Data
+
+<ul>
+<li>
+<b>Presentation</b>, terdiri dari beberapa bagian, yaitu Provider (sebagai perantara/penghubung dari datasource ke page), Pages (halaman yang akan ditampilkan kepada user), dan Widget (komponen-komponen yang terdapat dalam suatu page)
+</li>
+
+<li><b>Business</b>, terdiri dari beberapa bagian, yaitu Repositories, Entities, dan Usecases</li>
+
+<li><b>Data</b>, terdiri dari beberapa bagian, yaitu Repositories, Models, dan Data sources.</li>
+</ul>
+</li>
+
+<li><b>Cara mengimplementasikan checklist:</b>
+
+
+
+</li>
+</ol>
+
 </details>
