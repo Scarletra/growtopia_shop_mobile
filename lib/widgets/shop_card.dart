@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:growtopia_shop/screens/daftar_item.dart';
 import 'package:growtopia_shop/screens/growtopia_form.dart';
 
 class ShopItem {
   final String name;
   final IconData icon;
+  final Color color;
 
-  ShopItem(this.name, this.icon);
+  ShopItem(this.name, this.icon, this.color);
 }
 
 class ShopCard extends StatelessWidget {
@@ -16,7 +18,7 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.indigo,
+      color: item.color,
       child: InkWell(
         // Area responsive terhadap sentuhan
         onTap: () {
@@ -25,7 +27,11 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          if (item.name == "Tambah Produk") {
+          if (item.name == "Lihat Item") {
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DaftarItem()));
+          }
+          if (item.name == "Tambah Item") {
             Navigator.push(context,
               MaterialPageRoute(builder: (context) => const ShopFormPage()));
           }

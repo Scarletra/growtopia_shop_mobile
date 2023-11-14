@@ -17,7 +17,7 @@ class LeftDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Shopping List',
+                  'Growtopia Shop',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -26,7 +26,7 @@ class LeftDrawer extends StatelessWidget {
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
-                Text("Catat seluruh keperluan belanjamu di sini!",
+                Text("Welcome to Growtopia Shop\n Where do you want to go?",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
@@ -51,7 +51,7 @@ class LeftDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.add_shopping_cart),
-              title: const Text('Tambah Produk'),
+              title: const Text('Tambah Item Baru'),
               // Bagian redirection ke ShopFormPage
               onTap: () {
                 Navigator.push(context,

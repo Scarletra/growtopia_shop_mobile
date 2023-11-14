@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:growtopia_shop/widgets/item_card.dart';
 import 'package:growtopia_shop/widgets/left_drawer.dart';
-import 'package:growtopia_shop/widgets/shop_card.dart';
+import 'package:growtopia_shop/screens/growtopia_form.dart';
 
-class MyHomePage extends StatelessWidget {
-    MyHomePage({Key? key}) : super(key: key);
-    final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist, const Color.fromARGB(233, 230, 166, 198)),
-    ShopItem("Tambah Item", Icons.add_shopping_cart, const Color.fromARGB(233, 215, 210, 213)),
-    ShopItem("Logout", Icons.logout, const Color.fromARGB(233, 54, 10, 32)),
-];
+class DaftarItem extends StatelessWidget {
+    DaftarItem({Key? key}) : super(key: key);
+    final List<ItemGrowtopia> barangBarang = listItem;
+    final List<GrowtopiaItem> cardItem = [];
 
+    void generateCardItems() {
+    for (final barang in barangBarang) {
+      cardItem.add(GrowtopiaItem(barang.namaItem, barang.price.toString(), barang.description));
+    }
+  }
+
+    
     @override
     Widget build(BuildContext context) {
-        return Scaffold(
-      appBar: AppBar(
+      generateCardItems();
+      return Scaffold(
+    appBar: AppBar(
         title: const Text(
           'Growtopia Shop',
           style: TextStyle(
@@ -35,7 +41,7 @@ class MyHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 // Widget Text untuk menampilkan tulisan dengan alignment center dan style yang sesuai
                 child: Text(
-                  'Growtopia Shop', // Text yang menandakan toko
+                  'Your Growtopia Item:', // Text yang menandakan toko
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -52,9 +58,9 @@ class MyHomePage extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                children: items.map((ShopItem item) {
+                children: cardItem.map((GrowtopiaItem item) {
                   // Iterasi untuk setiap item
-                  return ShopCard(item);
+                  return GrowtopiaItemCard(item);
                 }).toList(),
               ),
             ],
@@ -62,6 +68,7 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
     );
-    }
-}
 
+  }
+
+}

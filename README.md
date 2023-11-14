@@ -1,5 +1,6 @@
 # Growtopia Shop
 
+
 <b>Name: Fernando Valentino Sitinjak</b> <br>
 <b>Student ID: 220608133</b> <br>
 
@@ -75,6 +76,7 @@
 <details>
 <summary>Tugas 8</summary>
 <ol>
+
 <li>Secara definisi, `Navigator.push()` merupakan method yang berguna untuk menambahkan halaman baru ke dalam tumpukan (stack) halaman yang akan ditampilkan. Sedangkan, 'Navigator.pushReplacement()' merupakan method yang berguna untuk menggantikan halaman yang ada pada tumpukan (stack) sekarang dengan halaman yang baru.</li>
 
 <li>

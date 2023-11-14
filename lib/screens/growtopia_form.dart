@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:growtopia_shop/widgets/left_drawer.dart';
 
+List<ItemGrowtopia> listItem = [];
+
 class ShopFormPage extends StatefulWidget {
     const ShopFormPage({super.key});
 
     @override
     State<ShopFormPage> createState() => _ShopFormPageState();
 }
+
+class ItemGrowtopia {
+  final String namaItem;
+  final int price;
+  final String description;
+
+
+  const ItemGrowtopia({
+    required this.namaItem,
+    required this.price,
+    required this.description,
+  });
+  }
+
 
 class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
@@ -115,6 +131,14 @@ class _ShopFormPageState extends State<ShopFormPage> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
+
+                          ItemGrowtopia itemBaru = ItemGrowtopia(
+                            namaItem: _name,
+                            price: _price, 
+                            description: _description);
+
+                          listItem.add(itemBaru);
+
                           showDialog(
                             context: context,
                             builder: (context) {
