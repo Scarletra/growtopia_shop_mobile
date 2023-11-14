@@ -77,17 +77,17 @@
 <summary>Tugas 8</summary>
 <ol>
 
-<li>Secara definisi, `Navigator.push()` merupakan method yang berguna untuk menambahkan halaman baru ke dalam tumpukan (stack) halaman yang akan ditampilkan. Sedangkan, 'Navigator.pushReplacement()' merupakan method yang berguna untuk menggantikan halaman yang ada pada tumpukan (stack) sekarang dengan halaman yang baru.</li>
+<li>Secara definisi,  Navigator.push()  merupakan method yang berguna untuk menambahkan halaman baru ke dalam tumpukan (stack) halaman yang akan ditampilkan. Sedangkan, Navigator.pushReplacement() merupakan method yang berguna untuk menggantikan halaman yang ada pada tumpukan (stack) sekarang dengan halaman yang baru.</li><br>
 
-<li>
-<ul>
-<li><b>Container</b>, layout widget yang berguna untuk mengelompokkan beberapa widget ke dalam satu kotak. Pengunaannya: mengatur margin, padding, dan atribut lainnya pada widget lain</li>
+<li><ul><li><b>Container</b>, layout widget yang berguna untuk mengelompokkan beberapa widget ke dalam satu kotak. Pengunaannya: mengatur margin, padding, dan atribut lainnya pada widget lain</li>
 <li><b>Row dan Column</b>, layout widget yang berguna untuk mengatur penyususan widget dalam bentuk baris ataupun kolom. Penggunaannya: mengatur penyusunan teks, gambar, ataupun widget lainnya</li>
 <li><b>GridView</b>, [Deskripsi]</li>
 <li><b>Card</b>, [Deskripsi]</li>
 </ul>
-</li>
-<li>Input form yang digunakan pada tugas saya adalah 'TextFormField' yang mana berguna untuk menerima input berupa teks. Alasan menggunakan input form ini adalah karena memang yang dibutuhkan hanyalah jenis input form ini. Untuk input form lainnya, masih belum dibutuhkan karena informasi pada data yang akan dibuat masihlah sangat sederhana</li>
+</li><br>
+
+<li>Input form yang digunakan pada tugas saya adalah 'TextFormField' yang mana berguna untuk menerima input berupa teks. Alasan menggunakan input form ini adalah karena memang yang dibutuhkan hanyalah jenis input form ini. Untuk input form lainnya, masih belum dibutuhkan karena informasi pada data yang akan dibuat masihlah sangat sederhana</li><br>
+
 <li>Penerapan clean architecture pada Flutter, menerapkan konsep pemisahan antar lapisan. Lapisan itu sendiri terbagi menjadi 3 layers, yaitu Presentation, Business, dan Data
 
 <ul>
