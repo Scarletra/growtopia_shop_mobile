@@ -331,3 +331,139 @@
 </ol>
 
 </details>
+
+
+<details>
+<summary>Tugas 9</summary>
+
+<ol>
+<li>Ya, kita dapat melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Namun, ada beberapa hal yang dapat perlu menjadi pertimbangan sehingga kita tidak dapat menyimpulkan bahwa hal tersebut lebih baik. Pertimbangannya adalah fleksibilitas dan juga kepastian struktur data.
+
+Tanpa adanya models dalam proyek flutter kita, kita dapat menangani data-data yang ada tanpa perlu menyesuaikan dengan atribut-atribut tertentu seperti yang sudah didefinisikan dalam sebuah models. Akan tetapi, dengan tidak adanya models dalam proyek kita, kita bisa saja menjadi kesulitan dalam membaca dan mengelola data kita disebabkan adanya ketidakkonsistenan isi data yang ada.
+</li> <br>
+<li>
+<code>CookieRequest</code> adalah kelas yang berfungsi untuk mengatur HTTP request dan mengelola cookie. Alasan mengapa instance dari <code>CookieRequest</code> perlu dibagikan dalam semua komponen di aplikasi flutter kita adalah agar kita dapat melakukan HTTP request yang sudah terautentikasi(melalui adanya cookie).
+</li> <br>
+<li>
+
+</li> <br>
+<li>
+<ul>
+Tahapan dalam proses autentikasi data user yang mengakses:
+<li>User memasukkan data yang dibutuhkan yaitu username dan juga password</li>
+<li>Dalam file <code>login.dart</code>, terdapat sintaks yang akan memberikan/mengeluarkan HTTP request yang akan dikirimkan ke proyek Django kita yang sudah terintegrasi melalui endpoint /login</li>
+<li>Pada proyek Django kita, request akan diterima dan akan dikelola/dicek. Kemudian, proyek Django kita akan memberikan response yang sesuai dengan hasil pengecekan request kita sebelumnya</li>
+</ul>
+</li> <br>
+<li>
+
+</li>
+
+
+
+
+</ol>
+
+<ul>
+<b>Implementasi checklist tugas 9</b>
+<li>Memastikan deployment proyek Django sebelumnya sudah berfungsi dengan baik disusul dengan beberapa perubahan yang berguna untuk mengintegrasikan proyek Django kita dengan aplikasi flutter kita</li>
+<li>Membuat app baru bernama <b>authentication</b> dan menambahkannya ke dalam <b>INSTALLED_APPS</b> yang ada pada file <code>settings.py</code> yang ada pada direktori proyek Django kita</li>
+<li>Menginstall beberapa depedencies yang dibutuhkan dan mengatur beberapa konfigurasi pada file <code>settings.py</code></li>
+<li>membuat file baru pada direktori <b>lib</b> dengan nama file <b>login.dart</b>. Pada file ini, aplikasi kita akan menampilkan halaman untuk login</li>
+<li>Menambahkan beberapa method baru pada direktori <b>authentication</b> dalam file <code>views.py</code>
+<code>
+  @csrf_exempt
+  def login(request):
+      username = request.POST['username']
+      password = request.POST['password']
+      user = authenticate(username=username, password=password)
+      if user is not None:
+          if user.is_active:
+              auth_login(request, user)
+              # Status login sukses.
+              return JsonResponse({
+                  "username": user.username,
+                  "status": True,
+                  "message": "Login sukses!"
+                  # Tambahkan data lainnya jika ingin mengirim data ke Flutter.
+              }, status=200)
+          else:
+              return JsonResponse({
+                  "status": False,
+                  "message": "Login gagal, akun dinonaktifkan."
+              }, status=401)
+
+      else:
+          return JsonResponse({
+              "status": False,
+              "message": "Login gagal, periksa kembali email atau kata sandi."
+          }, status=401)
+
+  @csrf_exempt
+  def logout(request):
+      username = request.user.username
+
+      try:
+          auth_logout(request)
+          return JsonResponse({
+              "username": username,
+              "status": True,
+              "message": "Logout berhasil!"
+          }, status=200)
+      except:
+          return JsonResponse({
+          "status": False,
+          "message": "Logout gagal."
+          }, status=401)
+</code>
+</li>
+<li>Mengambil data JSON pada proyek Django kita dengan tujuan menjadikannya sebagai sampel yang akan kita copy ke <b>QuickType</b>. Web ini akan meng-convert data JSON kita menjadi sebuah bentuk models yang dapat dipakai dalam proyek flutter-dart. Sebagai contoh:
+
+<code>
+    class Product {
+        String model;
+        int pk;
+        Fields fields;
+
+        Product({
+            required this.model,
+            required this.pk,
+            required this.fields,
+        });
+
+        factory Product.fromJson(Map<String, dynamic> json) => Product(
+            model: json["model"],
+            pk: json["pk"],
+            fields: Fields.fromJson(json["fields"]),
+        );
+
+        Map<String, dynamic> toJson() => {
+            "model": model,
+            "pk": pk,
+            "fields": fields.toJson(),
+        };
+    }
+
+    class Fields {
+        int user;
+        String name;
+        DateTime dateAdded;
+        int price;
+        int amount;
+        String description;
+
+        Fields({
+            required this.user,
+            required this.name,
+            required this.dateAdded,
+            required this.price,
+            required this.amount,
+            required this.description,
+        });
+    }
+</code>
+</li>
+<li></li>
+</ul>
+
+</details>>
