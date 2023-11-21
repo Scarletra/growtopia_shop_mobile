@@ -371,7 +371,7 @@ Tahapan dalam proses autentikasi data user yang mengakses:
 <li>Menginstall beberapa depedencies yang dibutuhkan dan mengatur beberapa konfigurasi pada file <code>settings.py</code></li>
 <li>membuat file baru pada direktori <b>lib</b> dengan nama file <b>login.dart</b>. Pada file ini, aplikasi kita akan menampilkan halaman untuk login</li>
 <li>Menambahkan beberapa method baru pada direktori <b>authentication</b> dalam file <code>views.py</code>
-<code>
+
   @csrf_exempt
   def login(request):
       username = request.POST['username']
@@ -415,11 +415,10 @@ Tahapan dalam proses autentikasi data user yang mengakses:
           "status": False,
           "message": "Logout gagal."
           }, status=401)
-</code>
+
 </li>
 <li>Mengambil data JSON pada proyek Django kita dengan tujuan menjadikannya sebagai sampel yang akan kita copy ke <b>QuickType</b>. Web ini akan meng-convert data JSON kita menjadi sebuah bentuk models yang dapat dipakai dalam proyek flutter-dart. Sebagai contoh:
 
-<code>
     class Product {
         String model;
         int pk;
@@ -461,7 +460,7 @@ Tahapan dalam proses autentikasi data user yang mengakses:
             required this.description,
         });
     }
-</code>
+
 </li>
 <li></li>
 </ul>
