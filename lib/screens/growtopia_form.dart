@@ -6,28 +6,12 @@ import 'package:growtopia_shop/widgets/left_drawer.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
-List<ItemGrowtopia> listItem = [];
-
 class ShopFormPage extends StatefulWidget {
     const ShopFormPage({super.key});
 
     @override
     State<ShopFormPage> createState() => _ShopFormPageState();
 }
-
-class ItemGrowtopia {
-  final String namaItem;
-  final int price;
-  final String description;
-
-
-  const ItemGrowtopia({
-    required this.namaItem,
-    required this.price,
-    required this.description,
-  });
-  }
-
 
 class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
@@ -127,6 +111,32 @@ class _ShopFormPageState extends State<ShopFormPage> {
                     },
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Jumlah",
+                      labelText: "Jumlah",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    onChanged: (String? value) {
+                      setState(() {
+                        _amount = int.parse(value!);
+                      });
+                    },
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return "Jumlah tidak boleh kosong!";
+                      }
+                      if (int.tryParse(value) == null) {
+                        return "Jumlah harus berupa angka!";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
@@ -138,8 +148,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                       ),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                            // Kirim ke Django dan tunggu respons
-                            // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                             final response = await request.postJson(
                             "https://fernando-valentino-tugas.pbp.cs.ui.ac.id/create-flutter/",
                             jsonEncode(<String, String>{
@@ -147,7 +155,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                 'price': _price.toString(),
                                 'description': _description,
                                 'amount': _amount.toString(),
-                                // TODO: Sesuaikan field data sesuai dengan aplikasimu
                             }));
                             if (response['status'] == 'success') {
                                 ScaffoldMessenger.of(context)

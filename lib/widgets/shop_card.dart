@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:growtopia_shop/screens/daftar_item.dart';
 import 'package:growtopia_shop/screens/growtopia_form.dart';
 import 'package:growtopia_shop/screens/list_item.dart';
 import 'package:growtopia_shop/screens/login.dart';
@@ -32,13 +31,13 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          if (item.name == "Tambah Produk") {
+          if (item.name == "Tambah Item") {
             Navigator.push(context,
               MaterialPageRoute(builder: (context) => const ShopFormPage()));
           }
-          else if (item.name == "Lihat Produk") {
+          else if (item.name == "Lihat Item") {
             Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ProductPage()));
+            MaterialPageRoute(builder: (context) => ProductPage()));
           }
           else if (item.name == "Logout") {
         final response = await request.logout(
@@ -87,5 +86,3 @@ class ShopCard extends StatelessWidget {
     );
   }
 }
-
-//MaterialPageRoute(builder: (context) => DaftarItem()));
