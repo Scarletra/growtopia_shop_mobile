@@ -345,18 +345,27 @@ Tanpa adanya models dalam proyek flutter kita, kita dapat menangani data-data ya
 <code>CookieRequest</code> adalah kelas yang berfungsi untuk mengatur HTTP request dan mengelola cookie. Alasan mengapa instance dari <code>CookieRequest</code> perlu dibagikan dalam semua komponen di aplikasi flutter kita adalah agar kita dapat melakukan HTTP request yang sudah terautentikasi(melalui adanya cookie).
 </li> <br>
 <li>
-
+<ul>
+<li>Membuat request HTTP GET ke URL yang dituju. Pada tugas ini, kita melakukan method GET pada URL proyek Django kita</li>
+<li>Django memberikan response dankita akan menerima data dalam bentuk JSON, lalu pada aplikasi flutter kita, kita akan melakukan decode</li>
+<li>Data yang kita terima akan diubah menjadi dalam bentuk sebuah Models</li>
+</ul>
 </li> <br>
 <li>
-<ul>
 Tahapan dalam proses autentikasi data user yang mengakses:
+<ul>
 <li>User memasukkan data yang dibutuhkan yaitu username dan juga password</li>
 <li>Dalam file <code>login.dart</code>, terdapat sintaks yang akan memberikan/mengeluarkan HTTP request yang akan dikirimkan ke proyek Django kita yang sudah terintegrasi melalui endpoint /login</li>
 <li>Pada proyek Django kita, request akan diterima dan akan dikelola/dicek. Kemudian, proyek Django kita akan memberikan response yang sesuai dengan hasil pengecekan request kita sebelumnya</li>
 </ul>
 </li> <br>
 <li>
-
+Widget yang digunakan dalam tugas 9 ini
+<ul>
+<li><b>Elevated Button</b>, berguna untuk membuat sebuah tombol</li>
+<li><b>TextField</b>, berguna untuk menerima input berupa teks dari user</li>
+<li><b>Navigator</b>, berguna untuk mengatur rute halaman pada aplikasi kita</li>
+</ul>
 </li>
 
 
@@ -364,7 +373,7 @@ Tahapan dalam proses autentikasi data user yang mengakses:
 
 </ol>
 
-<ul>
+<ul> <br>
 <b>Implementasi checklist tugas 9</b>
 <li>Memastikan deployment proyek Django sebelumnya sudah berfungsi dengan baik disusul dengan beberapa perubahan yang berguna untuk mengintegrasikan proyek Django kita dengan aplikasi flutter kita</li>
 <li>Membuat app baru bernama <b>authentication</b> dan menambahkannya ke dalam <b>INSTALLED_APPS</b> yang ada pada file <code>settings.py</code> yang ada pada direktori proyek Django kita</li>
@@ -372,49 +381,50 @@ Tahapan dalam proses autentikasi data user yang mengakses:
 <li>membuat file baru pada direktori <b>lib</b> dengan nama file <b>login.dart</b>. Pada file ini, aplikasi kita akan menampilkan halaman untuk login</li>
 <li>Menambahkan beberapa method baru pada direktori <b>authentication</b> dalam file <code>views.py</code>
 
-  @csrf_exempt
-  def login(request):
-      username = request.POST['username']
-      password = request.POST['password']
-      user = authenticate(username=username, password=password)
-      if user is not None:
-          if user.is_active:
-              auth_login(request, user)
-              # Status login sukses.
-              return JsonResponse({
-                  "username": user.username,
-                  "status": True,
-                  "message": "Login sukses!"
-                  # Tambahkan data lainnya jika ingin mengirim data ke Flutter.
-              }, status=200)
-          else:
-              return JsonResponse({
-                  "status": False,
-                  "message": "Login gagal, akun dinonaktifkan."
-              }, status=401)
 
-      else:
-          return JsonResponse({
-              "status": False,
-              "message": "Login gagal, periksa kembali email atau kata sandi."
-          }, status=401)
+    @csrf_exempt
+    def login(request):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                auth_login(request, user)
+                # Status login sukses.
+                return JsonResponse({
+                    "username": user.username,
+                    "status": True,
+                    "message": "Login sukses!"
+                    # Tambahkan data lainnya jika ingin mengirim data ke Flutter.
+                }, status=200)
+            else:
+                return JsonResponse({
+                    "status": False,
+                    "message": "Login gagal, akun dinonaktifkan."
+                }, status=401)
 
-  @csrf_exempt
-  def logout(request):
-      username = request.user.username
+        else:
+            return JsonResponse({
+                "status": False,
+                "message": "Login gagal, periksa kembali email atau kata sandi."
+            }, status=401)
 
-      try:
-          auth_logout(request)
-          return JsonResponse({
-              "username": username,
-              "status": True,
-              "message": "Logout berhasil!"
-          }, status=200)
-      except:
-          return JsonResponse({
-          "status": False,
-          "message": "Logout gagal."
-          }, status=401)
+    @csrf_exempt
+    def logout(request):
+        username = request.user.username
+
+        try:
+            auth_logout(request)
+            return JsonResponse({
+                "username": username,
+                "status": True,
+                "message": "Logout berhasil!"
+            }, status=200)
+        except:
+            return JsonResponse({
+            "status": False,
+            "message": "Logout gagal."
+            }, status=401)
 
 </li>
 <li>Mengambil data JSON pada proyek Django kita dengan tujuan menjadikannya sebagai sampel yang akan kita copy ke <b>QuickType</b>. Web ini akan meng-convert data JSON kita menjadi sebuah bentuk models yang dapat dipakai dalam proyek flutter-dart. Sebagai contoh:
